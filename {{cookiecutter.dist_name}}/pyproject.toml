@@ -44,9 +44,9 @@ dependencies = [
 ]
 post-install-commands = [
   "pre-commit install",
-  "git add .",
-  "git commit -m 'Initializing project.'",
-  "git flow init -d -t v"
+  #"git add .",
+  #"git commit -m 'Initializing project.'",
+  #"git flow init -d -t v"
 ]
 
 [tool.hatch.envs.default.scripts]
