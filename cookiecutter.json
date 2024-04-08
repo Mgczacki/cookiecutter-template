@@ -5,6 +5,7 @@
     "project_name": "A project",
     "dist_name": "{{cookiecutter.project_name.lower().replace(' ', '-')}}",
     "package_name": "{{cookiecutter.dist_name.replace('-', '_')}}",
+    "version": "0.0.1",
     "project_short_description": "",
     "repository_name": "{{cookiecutter.github_username}}/{{cookiecutter.dist_name}}",
     "repository_url": "https://github.com/{{cookiecutter.repository_name}}",
