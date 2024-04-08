@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "{{ cookiecutter.dist_name }}"
 authors = [
-  { name = "{{ cookiecutter.dist_name }}", email = "{{ cookiecutter.email }}" }
+  { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" }
 ]
 description = "{{ cookiecutter.project_short_description }}"
 readme = "README.md"
