@@ -43,9 +43,10 @@ dependencies = [
     {%- endif %}
 ]
 post-install-commands = [
+  "git init",
   "pre-commit install",
-  #"git add .",
-  #"git commit -m 'Initializing project.'",
+  "git add .",
+  "git commit -m 'Initializing project.'",
   #"git flow init -d -t v"
 ]
 
