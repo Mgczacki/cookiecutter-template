@@ -46,8 +46,8 @@ post-install-commands = [
   "git init",
   "pre-commit install",
   "git add .",
-  "git commit -m 'Initializing project.'",
-  #"git flow init -d -t v"
+  "git commit -m 'Initializing project.' --no-verify",
+  "git flow init -d -t v"
 ]
 
 [tool.hatch.envs.default.scripts]
