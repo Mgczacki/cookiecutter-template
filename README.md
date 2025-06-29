@@ -1,11 +1,11 @@
 # Cookiecutter Mgczacki PyPackage
 
-Cookiecutter template for a cutting-edge Python package: Hatch, ruff, mypy, GitHub Actions and more!
+Cookiecutter template for a cutting-edge Python package: uv, ruff, mypy, GitHub Actions and more!
 
 ## Features
 
 * [X] Lightweight starter
-* [X] [Hatch](https://hatch.pypa.io/latest/install/) package management
+* [X] [uv](https://docs.astral.sh/uv/) package management
 * [X] Linting and formatting with [`ruff`](https://github.com/charliermarsh/ruff)
 * [X] Type checking with [`mypy`](https://github.com/python/mypy)
 * [X] Unit tests with [`pytest`](https://github.com/pytest-dev/pytest) with optional asyncio setup.
@@ -20,7 +20,7 @@ Generate the project:
 cookiecutter https://github.com/mgczacki/cookiecutter-template
 ```
 
-The generator will automatically call `hatch env create` at the end.
+The generator will automatically set up a `.venv` and install dependencies using `uv`.
 
 Then, for the GitHub Actions pipelines to work correctly, you should:
 

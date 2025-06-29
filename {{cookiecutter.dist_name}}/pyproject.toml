@@ -18,19 +18,8 @@ requires-python = ">={{ cookiecutter.python_version }}"
 [tool.hatch.metadata.hooks.requirements_txt]
 files = ["requirements.txt"]
 
-[tool.hatch]
-
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.version]
-#source = "regex_commit"
-#commit_extra_args = ["-e"]
-path = "{{ cookiecutter.package_name }}/__about__.py"
-
-[tool.hatch.envs.default]
-python = "{{ cookiecutter.python_version }}"
-dependencies = [
+[dependency-groups]
+dev = [
     "mypy",
     "ruff",
     "pre-commit",
@@ -42,29 +31,7 @@ dependencies = [
     "pytest-asyncio",
     {%- endif %}
 ]
-post-install-commands = [
-  "git init",
-  "pre-commit install",
-  "git add .",
-  "git commit -m 'Initializing project.' --no-verify",
-  "git flow init -d -t v"
-]
 
-[tool.hatch.envs.default.scripts]
-test = "pytest"
-test-cov-xml = "pytest --cov-report=xml"
-lint = [
-  "ruff format .",
-  "ruff --fix .",
-  "mypy {{ cookiecutter.package_name }}/",
-]
-lint-check = [
-  "ruff format --check .",
-  "ruff .",
-  "mypy {{ cookiecutter.package_name }}/",
-]
-docs-serve = "mkdocs serve"
-docs-build = "mkdocs build"
 
 [project.urls]
 Documentation = "{{ cookiecutter.docs_url }}"
