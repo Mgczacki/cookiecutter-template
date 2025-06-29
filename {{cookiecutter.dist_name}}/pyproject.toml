@@ -9,7 +9,7 @@ authors = [
 ]
 description = "{{ cookiecutter.project_short_description }}"
 readme = "README.md"
-dynamic = ["version", "dependencies"]
+dynamic = ["version", "dependencies", "optional-dependencies"]
 classifiers = [
     "Programming Language :: Python :: 3 :: Only",
 ]
