@@ -9,14 +9,9 @@ repos:
       - id: end-of-file-fixer
       - id: debug-statements
       - id: check-merge-conflict
+      - id: check-docstring-first
       - id: requirements-txt-fixer
         files : (requirements|requirements_kuona)\.txt$
-
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.12.0
-    hooks:
-      - id: isort
-        args: [--profile, black]
 
   - repo: https://github.com/PyCQA/bandit
     rev: '1.7.4'
@@ -25,17 +20,15 @@ repos:
       args: [-r, -lll, -iii]
       types: [python]
 
-  - repo: https://github.com/psf/black
-    rev: 23.7.0
+  - repo: https://github.com/aws-cloudformation/cfn-lint
+    rev: v0.78.1  # The version of cfn-lint to use
     hooks:
-      - id: black-jupyter
-        # It is recommended to specify the latest version of Python
-        # supported by your project here, or alternatively use
-        # pre-commit's default_language_version, see
-        # https://pre-commit.com/#top_level-default_language_version
-        language_version: python{{cookiecutter.python_version}}
+      - id: cfn-lint
+        files: deploy/.*\.(json|yml|yaml)$
 
-  - repo: https://github.com/keewis/blackdoc
-    rev: v0.3.8
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.0
     hooks:
-      - id: blackdoc
+      - id: ruff-check
+        args: [ --fix ]
+      - id: ruff-format
