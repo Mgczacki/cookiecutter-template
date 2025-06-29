@@ -3,8 +3,8 @@
 set -e
 pip install uv
 uv pip install pre-commit
-uv pip install gitflow
 git init
+git branch -m main
 git flow init -d -t v
 git config core.hooksPath .githooks
 
