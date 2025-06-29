@@ -8,9 +8,10 @@ git init
 git branch -m main
 git flow init -d -t v
 git config gitflow.branch.master main
-git config core.hooksPath .githooks
 
 uv run pre-commit install
+cp .githooks/post-checkout .git/hooks/post-checkout
+echo "Custom post-checkout hook installed into .git/hooks."
+chmod +x .git/hooks/post-checkout
 git add .
 git commit -m 'Initializing project.' --no-verify
-
