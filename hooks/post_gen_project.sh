@@ -4,10 +4,8 @@ set -e
 pip install uv
 uv pip install pre-commit
 uv pip install hatch
-git init
-git branch -m main
+git init --initial-branch=main
 git flow init -d -t v
-git config gitflow.branch.master main
 
 uv run pre-commit install
 cp .githooks/post-checkout .git/hooks/post-checkout
