@@ -13,10 +13,10 @@ repos:
       - id: requirements-txt-fixer
         files : (requirements|requirements_kuona|requirements_deploy)\.txt$
 
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.0
-    hooks:
-      - id: ruff-check
-        args: [ --fix, --ignore, D ]
-        types_or: [ python, pyi ]
-      - id: ruff-format
+#  - repo: https://github.com/astral-sh/ruff-pre-commit
+#    rev: v0.12.0
+#    hooks:
+#      - id: ruff-check
+#        args: [ --fix, --ignore, D ]
+#        types_or: [ python, pyi ]
+#      - id: ruff-format
